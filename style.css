@@ -1,0 +1,7 @@
+*{
+    background-color: rgb(252, 244, 255);
+}
+#canvas{ /*remove auto browser padding is this even working */
+    padding: 20; 
+    margin: 20;
+}
