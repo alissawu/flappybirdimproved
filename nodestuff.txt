@@ -5,4 +5,11 @@ npm install --save-dev typescript
 3. create the config to compile ts -> js
 npx tsc --init
 4. to compile it
-npx tsc
+cd to the place that has the ts
+npx tsc (makes the js)
+
+5. local start
+npm start
+goto: http://localhost:3000
+
+6. npm run build

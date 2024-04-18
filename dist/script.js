@@ -3,7 +3,7 @@
 const canvas = document.getElementById("canv");
 const ctx = canvas.getContext("2d");
 // game vars
-const gravity = 0.4;
+const gravity = 0.6;
 let score = 0;
 const pipeSpacing = 330;
 const pipeWidth = 53;
@@ -32,9 +32,16 @@ class Bird {
         if (this.y > canvasHeight - this.height + 20 || this.y < -20) {
             gameOver();
         }
+        for (let pipe of pipes) {
+            if (bird.x < pipe.x + pipe.width &&
+                bird.x + bird.width > pipe.x &&
+                (bird.y < pipe.y + canvasHeight || bird.y + bird.height > pipe.y + canvasHeight + holeHeight)) {
+                gameOver();
+            }
+        }
     }
     jump() {
-        this.ySpeed = -8;
+        this.ySpeed = -12;
     }
 }
 // Pipe class 
@@ -69,7 +76,8 @@ function gameOver() {
     startGame();
 }
 function handleKeyDown(e) {
-    if (e.keyCode === 38 || e.keyCode === 32) {
+    // keyCode deprecated
+    if (e.key === 'ArrowUp' || e.key === 'Space') {
         bird.jump();
     }
 }
