@@ -3,7 +3,7 @@ const canvas = document.getElementById("canv") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
 
 // game vars
-const gravity: number = 1.6;
+const gravity: number = 2.9;
 let score: number = 0;
 const pipeSpacing: number = 330;
 const pipeWidth: number = 53;
@@ -54,7 +54,8 @@ class Bird {
     }
 
     jump(): void {
-        this.ySpeed = -5;
+        this.y += 30;
+        this.ySpeed = -16; // move upward gravity brings down
     }
 }
 
