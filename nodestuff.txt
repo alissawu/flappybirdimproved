@@ -1,0 +1,8 @@
+1. initialize the project
+npm init -y
+2. install typescript
+npm install --save-dev typescript
+3. create the config to compile ts -> js
+npx tsc --init
+4. to compile it
+npx tsc
